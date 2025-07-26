@@ -161,5 +161,3 @@ This section walks through the reconstruction process on a sample image, showing
 > The model fuses both to produce a much more semantically accurate image. 
 
 ---
-
-# Neural-Side-Information-Model
