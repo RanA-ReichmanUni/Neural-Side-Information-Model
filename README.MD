@@ -50,7 +50,7 @@ These forms of guidance are **lightweight** and practical to transmit or store, 
 We combine the side information with the diffusion model’s output through a refinement network:
 
 <!-- Replace this with your actual image -->
-![Model Flow Diagram](images/model_flow.png)
+![Model Flow Diagram](images/flow.png)
 
 1. A noisy or compressed image is denoised using a Diffusion Model.
 2. The output is then refined by our model using side information.
@@ -58,7 +58,7 @@ We combine the side information with the diffusion model’s output through a re
 
 ---
 
-## 🏗️ Network Architecture
+## Network Architecture
 
 Our refinement network builds on a **U-Net** backbone and incorporates:
 
@@ -70,7 +70,7 @@ This setup enables the model to align structural cues from side information with
 
 ---
 
-## 📊 Key Results
+## Key Results
 
 - **All side information types outperformed diffusion based denoising baseline**, especially at high degradation levels.
 - Even **very low-resolution images** significantly boosted PSNR and SSIM.
@@ -81,7 +81,7 @@ We also introduced a **bitrate savings metric**, quantifying how much less data 
 
 ---
 
-## 🔬 Conclusion
+## Conclusion
 
 Our approach:
 - Bridges **generative denoising** with **guided reconstruction**
@@ -92,52 +92,43 @@ This flexible framework can improve visual quality in real-world systems where d
 
 ---
 
-## 📸 Visual Demo: Alan Turing Teddy Bear Reconstruction
+## Visual Demo: Alan Turing Teddy Bear Reconstruction
 
 This section walks through the reconstruction process on a sample image, showing the effect of each step and how side information boosts results. 
 
 **Higher PSNR/SSIM indicates a higher similarity to the original image, in a logarithmic scale.**
 
----
-### High Level View of the Denoising Pipeline
-<!-- Replace with: images/original.png -->
-![Denoiding Pipeline Flow Image](images/flow.png) 
-
-*The flow chart of the pipeline.*
 
 
-
----
-
-### 🖼️ 1. Original Image
+### 1. Original Image
 <!-- Replace with: images/original.png -->
 ![Original Image](images/original.png)  
 *This is the reference image before any compression or degradation.*
 
 ---
 
-### 🌫️ 2. Compressed / Noisy Image
+### 2. Compressed / Noisy Image
 <!-- Replace with: images/noisy.png -->
 ![Noisy Image](images/noisy.png)  
 *The image after simulated compression or noise addition. Structural and semantic content is visibly degraded.*
 
 ---
 
-### 🔁 3. After Baseline Diffusion Denoising
+### 3. After Baseline Diffusion Denoising
 <!-- Replace with: images/denoised.png -->
 ![Denoised Image](images/denoised.png)  
 *Denoised by a pretrained diffusion model. The image appears plausible but lacks sharp structure and fine details. May also hallucinate elements.*
 
 ---
 
-### 🛰️ 4. Side Information Used – Low Resolution (64×64)
+### 4. Side Information Used – Low Resolution (64×64)
 <!-- Replace with: images/sideinfo_lowres.png -->
 ![Side Info – Low Res](images/sideinfo_lowres.png)  
 *A small thumbnail (64×64) of the original image saved separately as auxiliary input.*
 
 ---
 
-### 🧠 5. Simulation of Extremly Noisy Intial Image (0.12 bpp), Reconstructed Image Using Denoised + Low Res Side Information
+### 5. Simulation of Extremly Noisy Intial Image (0.12 bpp), Reconstructed Image Using Denoised + Low Res Side Information
 <!-- Replace with: images/reconstructed_lowres.png -->
 ![Reconstruction with Low Res](images/reconstructed_lowres.png)  
 *Final reconstruction using both the denoised image and the low-res side info.*  
@@ -150,7 +141,7 @@ This section walks through the reconstruction process on a sample image, showing
 ---
 
 
-### 🔧 6. Simulation Using Extremly Noisy Intial Image (0.12 bpp), Reconstructed Image Using Denoised + Sparse Grayscale Side Information
+### 6. Simulation Using Extremly Noisy Intial Image (0.12 bpp), Reconstructed Image Using Denoised + Sparse Grayscale Side Information
 <!-- Replace with: images/reconstructed_sparse.png -->
 ![Reconstruction with Sparse Info](images/reconstructed_sparse.png)  
 *Reconstruction using sparse grayscale side info. Preserves fine structure that diffusion missed on its own.*
