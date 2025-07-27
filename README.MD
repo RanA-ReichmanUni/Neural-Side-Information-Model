@@ -45,7 +45,7 @@ These forms of guidance are **lightweight** and practical to transmit or store, 
 
 ---
 
-## 🔁 Model Flow
+## Model Flow
 
 We combine the side information with the diffusion model’s output through a refinement network:
 
