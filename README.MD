@@ -4,11 +4,11 @@
 
 ## Motivation
 
-In fields like **satellite imaging**, and **medical imaging**, images are often degraded due to hardware limits, bandwidth constraints, or aggressive compression. These distortions can obscure critical visual information — a blurred satellite photo may hide key infrastructure, and a noisy X-ray may conceal critical diagnostic features.
+In fields like **satellite imaging**, and **medical imaging**, images are often degraded due to hardware limits, bandwidth constraints, or aggressive compression. These distortions can obscure critical visual information, a blurred satellite photo may hide key infrastructure, and a noisy X-ray may conceal critical diagnostic features.
 
 However, many real-world systems in these domains benefit from **multi-origin data capture**, for example, satellites often include both high-resolution and low-resolution sensors, or multiple modalities (e.g., optical + infrared), while medical systems may combine scans from different machines (like CT and X-ray) or store both compressed previews and full-resolution data. Even when these individual inputs are degraded, they offer **complementary structural or semantic cues** that can guide restoration.
 
-Traditional restoration methods, including recent **diffusion models** — perform well on natural image synthesis but often **hallucinate or miss structure** during reconstruction. 
+Traditional restoration methods, including recent **diffusion models**, perform well on natural image synthesis but often **hallucinate or miss structure** during reconstruction. 
 
 Our goal is to **restore realistic and semantically accurate images**, even when key parts are lost or noisy.
 
@@ -88,7 +88,7 @@ Our approach:
 - Leverages cheap, available side data for significant quality improvements
 - Supports both **compression-aware** and **sensor-noise-aware** use cases
 
-This flexible framework can improve visual quality in real-world systems where data is **incomplete, compressed, or noisy** — offering practical impact for bandwidth-constrained or low-quality sensing environments.
+This flexible framework can improve visual quality in real-world systems where data is **incomplete, compressed, or noisy**, offering practical impact for bandwidth-constrained or low-quality sensing environments.
 
 ---
 
